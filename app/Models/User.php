@@ -19,6 +19,7 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'name',
         'email',
+        'user_type',
         'password',
     ];
 
@@ -28,7 +29,6 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $hidden = [
-        'password',
         'remember_token',
     ];
 
@@ -68,8 +68,4 @@ class User extends Authenticatable implements JWTSubject
      *
      * @return object Eloquent product object
      */
-    public function products()
-    {
-        return $this->hasMany(Product::class)->orderBy('id', 'desc');
-    }
 }
