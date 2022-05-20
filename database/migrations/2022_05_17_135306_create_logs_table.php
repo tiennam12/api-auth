@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->text('content')->nullable();
-            $table->text('user_id')->nullable();
+            $table->text('name');
+            $table->integer('system');
+            $table->boolean('action');
             $table->timestamps();
         });
     }

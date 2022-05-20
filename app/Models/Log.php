@@ -15,7 +15,8 @@ class Log extends Model
      * @var array
      */
     protected $fillable = [
-        'content',
-        'user_id'
+        'name',
+        'system',
+        'action'
     ];
 }

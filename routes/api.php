@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('users', [Controller::class, 'listUser']);
 Route::get('deleteUser/{id}', [Controller::class, 'deleteUser']);
-Route::get('log/{id}/{content}', [Controller::class, 'saveLog']);
+Route::post('log', [Controller::class, 'saveLog']);
 Route::get('logs', [Controller::class, 'listLog']);
 Route::group([
     'middleware' => 'api'

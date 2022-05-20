@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\User;
 use App\Models\Log;
+use Illuminate\Http\Request;
 
 class Controller extends BaseController
 {
@@ -55,18 +56,20 @@ class Controller extends BaseController
         return response()->json('', 200);
     }
     /**
-     * @OA\GET(
-     *     path="/api/log/$id/$content",
+     * @OA\POST(
+     *     path="/api/log",
      *     tags={"Authentication"},
      *     summary="save log when active system",
      *     description="",
      *     @OA\Response(response=200, description="Success" ),
      * )
      */
-    function saveLog($id, $content) {
+    function saveLog(Request $request) {
+            $params = $request->json()->all();
             $log = new Log;
-            $log->content = $content;
-            $log->user_id = $id;
+            $log->name = $params['name'];
+            $log->system = $params['system'];
+            $log->action = $params['action'];
             $log->save();
             return response()->json('', 200);
     }

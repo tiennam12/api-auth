@@ -192,6 +192,19 @@
                         "description": "Success"
                     }
                 }
+            },
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "save log when active system",
+                "description": "",
+                "operationId": "f35e67cb224a0ed8d69f6b749a004f17",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
             }
         },
         "/api/deleteUser/$id": {
@@ -202,21 +215,6 @@
                 "summary": "delete user",
                 "description": "delete specifi user",
                 "operationId": "de32b3008091456b3c4d57bb87446259",
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            }
-        },
-        "/api/log/$id/$content": {
-            "get": {
-                "tags": [
-                    "Authentication"
-                ],
-                "summary": "save log when active system",
-                "description": "",
-                "operationId": "6aba8d61cf11f1a6b4ff39ae1d03fbc6",
                 "responses": {
                     "200": {
                         "description": "Success"
